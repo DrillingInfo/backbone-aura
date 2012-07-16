@@ -18,9 +18,9 @@ define(["dom"], function ($) {
 		}
 	};
 
-	// * **param:** {string} subscriber Module name
 	// * **param:** {string} channel Event name
-	permissions.validate = function(subscriber, channel){
+	// * **param:** {string} subscriber Module name
+	permissions.validate = function (channel, subscriber) {
 		if (!rules[channel]) {
 			throw new Error("No permissions defined for " + channel);
 		}
