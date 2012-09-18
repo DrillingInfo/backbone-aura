@@ -108,7 +108,7 @@ define(['dom', 'underscore'], function ($, _) {
 
 		require(["widgets/" + file + "/main"], function (main) {
 			try {
-				main(element);
+				main(element, file);
 			} catch(e) {
 				console.error(e);
 			}
