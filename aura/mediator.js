@@ -16,10 +16,15 @@ define(['dom', 'underscore'], function ($, _) {
 
 	var channels = {},
 		// Loaded modules and their callbacks
-		obj = {}; // Mediator object
+		obj = {}, // Mediator object
+		config = {}; // Config (supplied by application)
 
 	// Uncomment if using zepto
 	// Deferred.installInto($);
+
+	obj.setConfig = function (appConfig) {
+		config = appConfig;
+	};
 
 	// Override the default error handling for requirejs
 	//
@@ -106,9 +111,11 @@ define(['dom', 'underscore'], function ($, _) {
 		// If a widget hasn't called subscribe this will fail because it wont
 		// be present in the channels object
 
+		var widgetConfig = config.widget || {};
+
 		require(["widgets/" + file + "/main"], function (main) {
 			try {
-				main(element, file);
+				main(element, file, widgetConfig[file] || {});
 			} catch(e) {
 				console.error(e);
 			}

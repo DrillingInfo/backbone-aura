@@ -11,6 +11,11 @@ define(["aura_core", "aura_perms"], function (mediator, permissions) {
 
 	var facade = {};
 
+	// * **param:** {object} application config (w/widget namespacing}
+	facade.setConfig = function (config) { 
+		core.setConfig(config);
+	};
+
 	// * **param:** {string} subscriber Module name
 	// * **param:** {string} channel Event name
 	// * **param:** {object} callback Module
