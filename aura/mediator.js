@@ -115,7 +115,8 @@ define(['dom', 'underscore'], function ($, _) {
 
 		require(["widgets/" + file + "/main"], function (main) {
 			try {
-				main(element, file, widgetConfig[file] || {});
+				main(element, file,
+					JSON.parse(JSON.stringify(widgetConfig[file] || {})));
 			} catch(e) {
 				console.error(e);
 			}
