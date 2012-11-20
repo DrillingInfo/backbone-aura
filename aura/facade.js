@@ -13,7 +13,7 @@ define(["aura_core", "aura_perms"], function (mediator, permissions) {
 
 	// * **param:** {object} application config (w/widget namespacing}
 	facade.setConfig = function (config) { 
-		core.setConfig(config);
+		mediator.setConfig(config);
 	};
 
 	// * **param:** {string} subscriber Module name
