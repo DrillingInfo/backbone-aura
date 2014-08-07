@@ -1,6 +1,6 @@
 {
   "name": "aura",
-  "version": "0.9.2-0+di",
+  "version": "0.9.2-1+di",
   "main": "lib/aura.js",
   "dependencies": {
     "jquery": "~1.10.x",
