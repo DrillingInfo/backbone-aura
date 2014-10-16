@@ -19,7 +19,7 @@ define(['aura/aura', 'aura/ext/components'], function (aura, ext) {
     }
     definition = definition || { initialize: sinon.spy() };
     var spyComponent = sinon.spy(function () { return definition; });
-    define('__component__$' + name, spyComponent);
+    define('__component__$' + name + '/main', spyComponent);
     return spyComponent;
   }
 
